@@ -1,0 +1,55 @@
+﻿@model List<PersonalModel>
+@{
+    ViewData["Title"] = "Listar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card">
+    <h5 class="card-header">Lista de Personal de Servicio</h5>
+    <div class="card-body">
+        <a asp-action="Guardar" asp-controller="Mantenedor" class="btn btn-success"><i class="bi bi-plus-circle"></i> Registrar nuevo Personal de Servicio </a>
+        <hr />
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Apellido Paterno</th>
+                    <th>Apellido Materno</th>
+                    <th>Dirección</th>
+                    <th>Edad</th>
+                    <th>Género</th>
+                    <th>Nacionalidad</th>
+                    <th>Fecha de Contratación</th>
+                    <th>Teléfono</th>
+                    <th>Sueldo</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.Nombre</td>
+                        <td>@item.ApellidoPaterno</td>
+                        <td>@item.ApellidoMaterno</td>
+                        <td>@item.Direccion</td>
+                        <td>@item.Edad</td>
+                        <td>@item.Genero</td>
+                        <td>@item.Nacionalidad</td>
+                        <td>@item.FechaContratacion.ToString("d")</td>
+                        <td>@item.Telefono</td>
+                        <td>@item.Sueldo</td>
+                        <td>
+                            <a asp-action="Editar" asp-controller="Mantenedor" class="btn btn-primary btn-sm" asp-route-IdPersonal="@item.IdPersonal"><i class="bi bi-pencil-square"></i> Editar </a>
+                        </td>
+                        <td>
+                            <a asp-action="Eliminar" asp-controller="Mantenedor" class="btn btn-danger btn-sm" asp-route-IdPersonal="@item.IdPersonal"><i class="bi bi-trash"></i> Eliminar </a>
+                        </td>
+
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+
+    </div>
+</div>

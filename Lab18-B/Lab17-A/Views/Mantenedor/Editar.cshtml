@@ -1,0 +1,31 @@
+﻿@model EnfermedadModel
+@{
+    ViewData["Title"] = "Editar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card">
+    <h5 class="card-header">Editar Enfermedad</h5>
+    <div class="card-body">
+        <form asp-action="Editar" asp-controller="Mantenedor" method="post">
+            <input type="hidden" class="form-control" asp-for="IdEnfermedad">
+            <input type="hidden" class="form-control" asp-for="Sintoma">
+            <input type="hidden" class="form-control" asp-for="Medicamento">
+            <div class="mb-3">
+                <label class="form-label">Nombre</label>
+                <input type="text" class="form-control" asp-for="Nombre">
+                <span asp-validation-for="Nombre" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Tasa de Mortalidad</label>
+                <input type="text" class="form-control" asp-for="TasaMortalidad">
+                <span asp-validation-for="TasaMortalidad" class="text-danger"></span>
+            </div>
+            
+            <button type="submit" class="btn btn-success"><i class="bi bi-floppy"></i> Guardar </button>
+            <a asp-action="Listar" asp-controller="Mantenedor" class="btn btn-warning"><i class="bi bi-arrow-return-left"></i> Volver a la lista </a>
+        </form>
+    </div>
+</div>
+
+

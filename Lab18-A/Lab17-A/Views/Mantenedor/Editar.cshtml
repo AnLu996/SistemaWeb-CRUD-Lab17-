@@ -1,0 +1,64 @@
+﻿@model PersonalModel
+@{
+    ViewData["Title"] = "Editar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card">
+    <h5 class="card-header">Editar Personal</h5>
+    <div class="card-body">
+        <form asp-action="Editar" asp-controller="Mantenedor" method="post">
+            <input type="hidden" class="form-control" asp-for="IdPersonal">
+            <input type="hidden" class="form-control" asp-for="Telefono">
+            <div class="mb-3">
+                <label class="form-label">Nombres</label>
+                <input type="text" class="form-control" asp-for="Nombre">
+                <span asp-validation-for="Nombre" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Apellido Paterno</label>
+                <input type="text" class="form-control" asp-for="ApellidoPaterno">
+                <span asp-validation-for="ApellidoPaterno" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Apellido Materno</label>
+                <input type="text" class="form-control" asp-for="ApellidoMaterno">
+                <span asp-validation-for="ApellidoMaterno" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Telefono</label>
+                <input type="number" class="form-control" asp-for="Telefono">
+                <span asp-validation-for="Telefono" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Dirección</label>
+                <input type="text" class="form-control" asp-for="Direccion">
+                <span asp-validation-for="Direccion" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Fecha de Nacimiento</label>
+                <input type="date" class="form-control" asp-for="FechaNacimiento">
+                <span asp-validation-for="FechaNacimiento" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Género</label>
+                <input type="text" class="form-control" asp-for="Genero">
+                <span asp-validation-for="Genero" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Nacionalidad</label>
+                <input type="text" class="form-control" asp-for="Nacionalidad">
+                <span asp-validation-for="Nacionalidad" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Sueldo</label>
+                <input type="text" class="form-control" asp-for="Sueldo">
+                <span asp-validation-for="Sueldo" class="text-danger"></span>
+            </div>
+            <button type="submit" class="btn btn-success"><i class="bi bi-floppy"></i> Guardar </button>
+            <a asp-action="Listar" asp-controller="Mantenedor" class="btn btn-warning"><i class="bi bi-arrow-return-left"></i> Volver a la lista </a>
+        </form>
+    </div>
+</div>
+
+
